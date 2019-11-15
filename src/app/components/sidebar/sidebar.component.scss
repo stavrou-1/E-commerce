@@ -1,0 +1,25 @@
+.card.app-card.app-sidebar {
+    width: 100%;
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        &:not(:first-child) {
+            border-top: 0.07em solid gainsboro;
+        }
+        li {
+            border: 0;
+            border-radius: 0;
+        }
+        &:hover > li {
+            background-color: rgba(0,0,0,0.1)
+        }
+        &:active > li {
+            background-color: #007bff;
+            color: #FFF;
+        }
+    }
+}
+.card.app-card.app-sidebar ul.list-group a > li.active {
+    background-color: #007bff;
+    color: #FFF;
+}

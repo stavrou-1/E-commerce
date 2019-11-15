@@ -1,0 +1,25 @@
+.app-cart-num {
+    background-color: #ffc800fa;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+}
+.app-brand {
+    color: #FFF;
+    background-color: #007bff;
+    border-radius: 50%;
+    width: 1.8em;
+    height: 1.8em;
+    text-align: center;
+    &:hover, &:active, &:visited {
+        color: #FFF;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+}
+.app-brand i.material-icons {
+    font-size: 1.2em;
+}

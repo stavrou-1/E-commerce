@@ -1,0 +1,22 @@
+<div class="card app-card app-sidebar">
+  <ul class="list-group list-group-flush">
+    <a>
+      <li [ngClass]="{'active': activeSidebarLink === ''}" class="sidebar-link list-group-item" (click)="queryCategories('')">All Categories</li>
+    </a>
+    <a>
+      <li [ngClass]="{'active': activeSidebarLink === 'bread'}" class="sidebar-link list-group-item" (click)="queryCategories('bread')">Bread</li>
+    </a>
+    <a>
+      <li [ngClass]="{'active': activeSidebarLink === 'dairy'}" class="sidebar-link list-group-item" (click)="queryCategories('dairy')">Dairy</li>
+    </a>
+    <a>
+      <li [ngClass]="{'active': activeSidebarLink === 'fruits'}" class="sidebar-link list-group-item" (click)="queryCategories('fruits')">Fruits</li>
+    </a>
+    <a>
+      <li [ngClass]="{'active': activeSidebarLink === 'spices'}" class="sidebar-link list-group-item" (click)="queryCategories('spices')">Seasonings and Spices</li>
+    </a>
+    <a>
+      <li [ngClass]="{'active': activeSidebarLink === 'veggies'}" class="sidebar-link list-group-item" (click)="queryCategories('veggies')">Vegetables</li>
+    </a>
+  </ul>
+</div>

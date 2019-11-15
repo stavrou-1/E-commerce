@@ -1,0 +1,23 @@
+<div class="container app-main-container">
+    <div class="row">
+        <div class="col-lg-3">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-lg-6" *ngFor="let item of cartService.getFilters()">
+                    <div class="card">
+                        <img class="card-img-top" [src]="item.imageSrc" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Brand: {{item.title}}</h5>
+                            <p class="card-text">Description: {{item.description}}</p>
+                            <p class="card-text">Price: {{item.price | currency}}</p>
+                            <button class="btn btn-secondary app-button-secondary" (click)="removeFromCart(item)">Remove -</button>
+                            <button class="btn btn-primary app-button-primary" (click)="addItemToCart(item)">Add +</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
