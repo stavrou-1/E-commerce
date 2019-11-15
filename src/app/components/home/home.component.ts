@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private dataService: DataService,
-    private cartService: CartService,
+    public cartService: CartService,
     private messageService: MessageService) { }
 
   ngOnInit(): void {

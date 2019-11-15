@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from './../../services/cart.service';
 import { Item } from 'src/app/Item';
+import { MessageService } from 'src/app/services/message.service';
 
 @Component({
   selector: 'app-cart',
@@ -12,7 +13,9 @@ export class CartComponent implements OnInit {
   myCart: Array<object>;
   total: any;
 
-  constructor(private cartService: CartService) { }
+  constructor(
+    public cartService: CartService,
+    private messageService: MessageService) { }
 
   ngOnInit() {
     this.configureCartList();
@@ -50,5 +53,6 @@ export class CartComponent implements OnInit {
   clearCart() {
     this.cartService.clear();
     this.total = 0;
+    this.messageService.add(`You recently cleared your cart!`);
   }
 }
