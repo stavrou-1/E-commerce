@@ -1,3 +1,9 @@
+import { SidebarComponent } from './../sidebar/sidebar.component';
+import { CheckoutComponent } from './../checkout/checkout.component';
+import { CartComponent } from './../cart/cart.component';
+import { HomeComponent } from './../home/home.component';
+import { AppRoutingModule } from './../../app-routing.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LoginComponent } from './login.component';
@@ -8,7 +14,8 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ]
+      imports: [ FormsModule, ReactiveFormsModule, AppRoutingModule ],
+      declarations: [ LoginComponent, HomeComponent, CartComponent, CheckoutComponent, SidebarComponent ]
     })
     .compileComponents();
   }));
