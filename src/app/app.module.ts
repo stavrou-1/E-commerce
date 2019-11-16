@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtHelperService, JWT_OPTIONS  } from '@auth0/angular-jwt';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
@@ -41,7 +42,7 @@ import { LoginComponent } from './components/login/login.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
+  providers: [ { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

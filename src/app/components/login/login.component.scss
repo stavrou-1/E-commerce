@@ -9,7 +9,7 @@
 .app-login-screen .centered-form {
     max-width: 30em;
     margin: 0 auto;
-    padding: 4em;
+    padding: 3em 1.5em;
     background-color: #FFF;
     position: relative;
     top: 50%;
@@ -49,4 +49,10 @@
 }
 .center-layout {
     text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+    .app-login-screen .centered-form {
+        padding: 4em;
+    }
 }

@@ -10,21 +10,41 @@
                     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                         <div class="form-group">
                             <label for="email">Email address</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"
-                            name="email"
-                            formControlName="email" required>
-                            <div *ngIf="loginForm.invalid" class="invalid-feedback">
-                                <div>Email is required</div>
+                            <input type="email"
+                                class="form-control" 
+                                id="email" 
+                                name="email"
+                                aria-describedby="email" 
+                                placeholder="Enter email"
+                                [formControl]="email" 
+                                required/>
+
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                class="alert alert-danger">Error: email is invalid
+                            </div>
+                            <div *ngIf="cognitoFailed" class="alert alert-danger">
+                                {{cognitoFailed}}
+                            </div>
+                            <div *ngIf="userPoolNotDefined" class="alert alert-success">
+                                <a routerLink="/">It's your lucky day. UserPool is not defined. View app here until we fix the authentication issue.</a>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"
-                            name="password"
-                            formControlName="password"
-                            placeholder="Password" required>
+                            <label for="password">Password</label>
+                            <input type="password" 
+                                class="form-control" 
+                                id="password"
+                                name="password"
+                                aria-describedby="password"
+                                placeholder="Password"
+                                [formControl]="password"
+                                required/>
+
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                class="alert alert-danger">Error password is invalid
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary app-cust-submit">Submit</button>
+                        <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary app-cust-submit">Submit</button>
                     </form>        
                 </div>
             </div>
