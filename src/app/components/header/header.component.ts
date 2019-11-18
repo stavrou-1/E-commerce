@@ -14,8 +14,12 @@ export class HeaderComponent implements DoCheck {
 
   constructor(private cartService: CartService) { }
 
-  ngDoCheck() {
+  ngDoCheck(): void {
     this.cartArray = this.cartService.getCart();
+  }
+
+  logOut(): void {
+    localStorage.removeItem('token');
   }
 
 }
