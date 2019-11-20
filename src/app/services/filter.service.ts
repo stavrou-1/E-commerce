@@ -20,7 +20,6 @@ export class FilterService {
 
     const arrayOriginal = this.cartService.getInventory();
 
-    // Big O(n) notation of linear time complexity.
     for (i = 0; i < arrayOriginal.length; i++) {
       ref[arrayOriginal[i].category] = [];
     }
@@ -29,7 +28,6 @@ export class FilterService {
       ref[arrayOriginal[i].category].push(arrayOriginal[i]);
     }
 
-    console.log(JSON.stringify(ref[searchString], null, 2));
     this.cartService.resetFilters(ref[searchString]);
 
     return ref[searchString];
